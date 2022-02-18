@@ -1,0 +1,78 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://fonts/BalsamiqSans-Bold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://fonts/KiriFont.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://button-title-play.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 100
+outline_size = 7
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 70
+outline_size = 2
+outline_color = Color( 1, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 30
+font_data = ExtResource( 2 )
+
+[node name="Titlepage" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1280.0
+margin_bottom = 720.0
+color = Color( 0.254902, 0.34902, 0.443137, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 5.0
+margin_top = 3.0
+margin_right = 1285.0
+margin_bottom = 299.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.121569, 0.933333, 0.666667, 1 )
+custom_colors/font_outline_modulate = Color( 1, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0.203922, 0.701961, 0.780392, 1 )
+custom_constants/shadow_offset_x = 5
+custom_constants/shadow_offset_y = 4
+text = "Be Da Ball!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button-title-play" type="Button" parent="."]
+margin_left = 494.092
+margin_top = 396.85
+margin_right = 805.092
+margin_bottom = 509.85
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 0.917647, 0, 1 )
+custom_colors/font_color_hover = Color( 1, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 1, 0.270588, 0.270588, 1 )
+text = "Play!"
+flat = true
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 392.439
+margin_top = 596.982
+margin_right = 908.439
+margin_bottom = 662.982
+custom_fonts/font = SubResource( 3 )
+text = "Collect all coins to win!"
+[connection signal="pressed" from="button-title-play" to="button-title-play" method="_on_buttontitleplay_pressed"]
